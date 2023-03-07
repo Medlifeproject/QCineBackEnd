@@ -3,9 +3,7 @@ package com.qcine.user.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import lombok.Data;
 
-@Data
 @ResponseStatus(value=HttpStatus.NOT_ACCEPTABLE)
 public class ConformPasswordnotmachedException  extends RuntimeException
 {/**
@@ -18,6 +16,15 @@ public class ConformPasswordnotmachedException  extends RuntimeException
 		super(resourceName+"" +"Conform Password Not Mached ");
 		this.resourceName = resourceName;
 	}
+
+	public String getResourceName() {
+		return resourceName;
+	}
+
+	public void setResourceName(String resourceName) {
+		this.resourceName = resourceName;
+	}
+	
 	
 	
 

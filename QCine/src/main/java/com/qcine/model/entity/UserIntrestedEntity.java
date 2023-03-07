@@ -7,13 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Transactional
 @Entity
 public class UserIntrestedEntity
@@ -22,5 +16,19 @@ public class UserIntrestedEntity
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int intId;
 	private List<String> diseces;
+	public int getIntId() {
+		return intId;
+	}
+	public void setIntId(int intId) {
+		this.intId = intId;
+	}
+	public List<String> getDiseces() {
+		return diseces;
+	}
+	public void setDiseces(List<String> diseces) {
+		this.diseces = diseces;
+	}
+	
+	
 
 }

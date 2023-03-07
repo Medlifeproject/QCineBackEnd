@@ -1,6 +1,6 @@
 package com.qcine.user.serviceimpl;
 
-import java.util.function.BiFunction;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,30 +46,34 @@ public class UserServiceImpl  implements UserServiceInter
 
 
 	@Override
-	public Object userLogin(String email, String password) 
-	{
-		User ep = userrepo.findByUserLogin(email, password);
-		
-      if (ep != null) {
-			System.out.println(ep);
-			if (ep.getUserPassword().equals(password)) {
-				return ep;
-		   } else {
-			   try {
-					throw new InvaledEmailORPasswordException("User", "password",password);
-			 }  catch (InvaledEmailORPasswordException ee) {
-					System.out.println(ee );
-					return ee.getMessage();
-				  }
-			   }
-          } else {
-			try {
-				throw new InvaledEmailORPasswordException("user", "email", email);
-			} catch (InvaledEmailORPasswordException ee) {
-				System.out.println(ee );
-				return ee.getMessage();
+	public Object userLogin(String UsernameOrEmail, String password) {
+		User user=userrepo.findByUsernameorEmail(UsernameOrEmail, UsernameOrEmail);
+		if (user!=null) {
+			System.out.println(user);
+			if(password.equals(user.getUserPassword())) {
+				return user;
 			}
+			else {
+				try {
+					throw new InvaledEmailORPasswordException("User", "UsernameOrEmail", UsernameOrEmail);
+				}
+				catch(InvaledEmailORPasswordException e) {
+					System.out.println(e);
+					return e.getMessage();
+					
+				}
+			}
+		}else {
+			try {
+				throw new InvaledEmailORPasswordException("User", "UsernameOrEmail", UsernameOrEmail);
+			}
+			catch(InvaledEmailORPasswordException e) {
+				return e.getMessage();
+				
+			}
+			
 		}
+		
 	}
 	
 //--------------->	Forget Password  <-------------------
