@@ -1,7 +1,10 @@
 package com.qcine.user.exception;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@Data
+@NoArgsConstructor
 
 public class InvaledemailIdException  extends RuntimeException
 {/**
@@ -14,14 +17,6 @@ public class InvaledemailIdException  extends RuntimeException
 	    super(resourceName+" "+"Inavaled Email Id ");
 	this.resourceName = resourceName;
 }
-
-	public String getResourceName() {
-		return resourceName;
-	}
-
-	public void setResourceName(String resourceName) {
-		this.resourceName = resourceName;
-	}
     
 	
 

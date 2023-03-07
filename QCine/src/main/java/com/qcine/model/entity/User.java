@@ -9,9 +9,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User 
 {
 	@Id
@@ -30,90 +36,5 @@ public class User
     @OneToOne(fetch = FetchType.EAGER  ,cascade = CascadeType.ALL)
     @JoinColumn(name="addId")
     private UserAddressEntity address;
-
-
-	public int getUserId() {
-		return userId;
-	}
-
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-
-	public String getUserName() {
-		return userName;
-	}
-
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-
-	public String getUserPassword() {
-		return userPassword;
-	}
-
-
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
-
-
-	public String getUserEmail() {
-		return userEmail;
-	}
-
-
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
-
-
-	public int getUserAge() {
-		return userAge;
-	}
-
-
-	public void setUserAge(int userAge) {
-		this.userAge = userAge;
-	}
-
-
-	public String getUserGender() {
-		return userGender;
-	}
-
-
-	public void setUserGender(String userGender) {
-		this.userGender = userGender;
-	}
-
-
-	public long getUserPhoneNo() {
-		return userPhoneNo;
-	}
-
-
-	public void setUserPhoneNo(long userPhoneNo) {
-		this.userPhoneNo = userPhoneNo;
-	}
-
-
-	public UserAddressEntity getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(UserAddressEntity address) {
-		this.address = address;
-	}
-    
-    
-    
-
-    
     
 }

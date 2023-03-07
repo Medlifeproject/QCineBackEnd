@@ -3,7 +3,11 @@ package com.qcine.user.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 
 @ResponseStatus(value=HttpStatus.ALREADY_REPORTED)
 
@@ -23,26 +27,6 @@ public class UserNameAllReadyExistException  extends RuntimeException
 		this.fieldName = fieldName;
 		this.fieldValue = fieldValue;
 	}
-	public String getResourceName() {
-		return resourceName;
-	}
-	public void setResourceName(String resourceName) {
-		this.resourceName = resourceName;
-	}
-	public String getFieldName() {
-		return fieldName;
-	}
-	public void setFieldName(String fieldName) {
-		this.fieldName = fieldName;
-	}
-	public Object getFieldValue() {
-		return fieldValue;
-	}
-	public void setFieldValue(Object fieldValue) {
-		this.fieldValue = fieldValue;
-	}
 	
-	
-      
       
 }

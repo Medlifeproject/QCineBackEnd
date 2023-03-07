@@ -9,10 +9,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Transactional
 public class UserAddressEntity 
 {
@@ -30,70 +35,7 @@ public class UserAddressEntity
     @JoinColumn(name="intId")
     private UserIntrestedEntity intrested;
 
-	public int getAddId() {
-		return addId;
-	}
-
-	public void setAddId(int addId) {
-		this.addId = addId;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getHouseNo() {
-		return houseNo;
-	}
-
-	public void setHouseNo(String houseNo) {
-		this.houseNo = houseNo;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public int getZipCode() {
-		return zipCode;
-	}
-
-	public void setZipCode(int zipCode) {
-		this.zipCode = zipCode;
-	}
-
-	public UserIntrestedEntity getIntrested() {
-		return intrested;
-	}
-
-	public void setIntrested(UserIntrestedEntity intrested) {
-		this.intrested = intrested;
-	}
-    
+	
     
     
 }
