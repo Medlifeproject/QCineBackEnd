@@ -12,17 +12,21 @@ import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class User 
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private int userId;
+	@Column(unique=true)
     private String userName;
 	private String userPassword;
+	@Column(unique=true)
     private String userEmail;
     private  int userAge;
     private String userGender;
@@ -32,7 +36,5 @@ public class User
     @OneToOne(fetch = FetchType.EAGER  ,cascade = CascadeType.ALL)
     @JoinColumn(name="addId")
     private UserAddressEntity address;
-    
-    
     
 }

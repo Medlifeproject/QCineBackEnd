@@ -11,16 +11,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Transactional
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Transactional
-@Entity
 public class UserIntrestedEntity
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int intId;
 	private List<String> diseces;
+
+	
+	
 
 }

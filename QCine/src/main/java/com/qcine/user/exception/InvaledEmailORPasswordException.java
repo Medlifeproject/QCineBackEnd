@@ -4,8 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+
+
 @ResponseStatus(value=HttpStatus.NOT_FOUND)
 public class InvaledEmailORPasswordException extends RuntimeException
 {/**
@@ -16,11 +20,13 @@ public class InvaledEmailORPasswordException extends RuntimeException
 	private String fieldNmae;
 	private Object fieldValue;
 	public InvaledEmailORPasswordException(String resourceName, String fieldNmae, Object fieldValue) {
-		super(resourceName+" "+": Inavaled Email or Password ");
+		super(resourceName+" "+": Invalid Email or Password ");
 		this.resourceName = resourceName;
 		this.fieldNmae = fieldNmae;
 		this.fieldValue = fieldValue;
 	}
+	
+	
 	
 	
 	

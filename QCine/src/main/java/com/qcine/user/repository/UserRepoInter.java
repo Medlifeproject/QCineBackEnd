@@ -19,11 +19,14 @@ public interface UserRepoInter extends JpaRepository<User, Integer>
     String findByUseremailSignup(String  e);
 	
 	
-	//login 
-	@Query(value="select * from user where user_email=?1 and user_password=?2",nativeQuery=true)
-	 public User findByUserLogin(String email,String pass);
+	//Login 
 	
+	@Query(value="select * from user where user_name=?1 or user_email=?2",nativeQuery=true)
+	User findByUsernameorEmail(String username,String email);
+
+
 	
+	//forgetpassword
 	@Query(value="select * from user where user_email=?1",nativeQuery=true)
 	public User findByUserforgetpassword( String email);
 

@@ -34,18 +34,19 @@ public class UserController
 	
 	
 	@GetMapping(value="login")
-	ResponseEntity<Object> userLogin(@RequestHeader String  email , @RequestHeader String password)
+public	ResponseEntity<Object> userLogin(@RequestHeader String  usernameoremail , @RequestHeader String password)
 	{
-		     Object emailpass = userservice.userLogin(email, password);
-		       System.out.println(email+" "+password+" "+emailpass+":   controller qcine");
+		     Object emailpass = userservice.userLogin(usernameoremail, password);
+		       System.out.println(usernameoremail+" "+password+" "+emailpass+":   controller qcine");
 		       
 		     if(emailpass instanceof User )
 		     {
 		    	 return ResponseEntity.status(200).body("LOGIN SUCCESSFULL DONE");
 		     }
-		     return ResponseEntity.status(400).body(userservice.userLogin(email, password));
+		     return ResponseEntity.status(400).body(userservice.userLogin(usernameoremail, password));
 	}
 	
+
 	
 	@GetMapping(value="forgetpassword")
 	ResponseEntity<Object> userForgetPass(@RequestHeader String  email,@RequestHeader String password,@RequestHeader String conformpassword)

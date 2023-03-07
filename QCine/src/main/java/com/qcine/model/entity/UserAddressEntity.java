@@ -12,10 +12,12 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@Data
+
+
 @Entity
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Transactional
 public class UserAddressEntity 
 {
@@ -32,5 +34,8 @@ public class UserAddressEntity
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name="intId")
     private UserIntrestedEntity intrested;
+
+	
+    
     
 }

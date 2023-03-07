@@ -4,9 +4,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 
 @ResponseStatus(value=HttpStatus.ALREADY_REPORTED)
-@Data
+
 public class UserNameAllReadyExistException  extends RuntimeException
 {
 
@@ -23,6 +27,6 @@ public class UserNameAllReadyExistException  extends RuntimeException
 		this.fieldName = fieldName;
 		this.fieldValue = fieldValue;
 	}
-      
+	
       
 }
