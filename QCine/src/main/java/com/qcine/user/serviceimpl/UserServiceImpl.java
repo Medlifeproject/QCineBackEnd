@@ -58,7 +58,7 @@ public class UserServiceImpl  implements UserServiceInter
 					throw new InvaledEmailORPasswordException("User", "UsernameOrEmail", UsernameOrEmail);
 				}
 				catch(InvaledEmailORPasswordException e) {
-					System.out.println(e);
+					System.out.println(e.getMessage());
 					return e.getMessage();
 					
 				}

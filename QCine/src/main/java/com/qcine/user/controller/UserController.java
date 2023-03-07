@@ -34,7 +34,7 @@ public class UserController
 	
 	
 	@GetMapping(value="login")
-	ResponseEntity<Object> userLogin(@RequestHeader String  usernameoremail , @RequestHeader String password)
+public	ResponseEntity<Object> userLogin(@RequestHeader String  usernameoremail , @RequestHeader String password)
 	{
 		     Object emailpass = userservice.userLogin(usernameoremail, password);
 		       System.out.println(usernameoremail+" "+password+" "+emailpass+":   controller qcine");
